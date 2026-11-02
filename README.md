@@ -22,11 +22,11 @@ root@server1:~# ./ipscan_v3.sh
 ```
 * Scanning Single IPv4
 ```
-root@labstack:~# ./ipscan_v3.sh 192.168.1.1/24 1 up
+root@server1:~# ./ipscan_v3.sh 192.168.1.1/24 1 up
 ```
 * Scanning Multiple IPv4
 ```
-root@labstack:~# ./ipscan_v3.sh 192.168.1.1/24,10.14.4.1/28,172.23.74.100/24 1 up
+root@server1:~# ./ipscan_v3.sh 192.168.1.1/24,10.14.4.1/28,172.23.74.100/24 1 up
 ```
 
 ## Support
