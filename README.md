@@ -6,6 +6,13 @@ This tools for multiple IPv4 scanning
 <img src="img/ipscan_v3.png">
 </p>
 
+#### Installing Tools
+```
+root@server1:~# git clone https://github.com/anggrdwjy/multiple-ipscan.git
+root@server1:~# cd multiple-ipscan
+root@server1:~# chmod -R 777 *
+```
+
 #### Running Tools
 
 * Running Tools (Default IPv4, 192.168.1.1)
