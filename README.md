@@ -3,7 +3,7 @@
 This tools for multiple IPv4 scanning
 
 <p align="left">
-<img src="img/multiple-ipscan.png">
+<img src="img/multiple_ipscanv2.png">
 </p>
 
 #### Installing Tools
