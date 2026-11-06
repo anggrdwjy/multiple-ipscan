@@ -1,12 +1,10 @@
 ## Information
 
-This tools for multiple IPv4 scanning
-
 <p align="left">
 <img src="img/multiple_ipscanv3.png">
 </p>
 
-#### Installing Tools
+#### Installing
 ```
 git clone https://github.com/anggrdwjy/multiple-ipscan.git
 cd multiple-ipscan
@@ -14,7 +12,7 @@ chmod +x multiple_ipscan.py
 python3 multiple_ipscan.py --help
 ```
 
-#### Fiture Tools
+#### Features
 ```
 # help
 python3 mutliple_ipscan.py --help
@@ -30,6 +28,39 @@ python3 multiple_ipscan.py fd00::/120 --up-only --no-color --no-banner --csv up.
 
 # timeout 2s, max 1000 IP target
 python3 multiple_ipscan.py 10.0.0.0/16 --max-ips 1000 --jobs 200
+```
+
+#### Helping Tools
+```
+root@labstack:~# python3 Ipscan.py --help
+usage: Ipscan.py [-h] [-t TIMEOUT] [-m {all,up_only}] [--max-ips MAX_IPS] [--jobs JOBS] [--csv CSV_FILE] [--json JSON_FILE] [--up-only] [--no-color] [--no-banner] target
+
+Advanced Hybrid IPv4/IPv6 Scanner - Python Version
+
+positional arguments:
+  target                Target IP/CIDR/Range, pisah koma untuk multiple. Bisa campur v4 & v6. Contoh: 192.168.1.0/24,fd00::/120
+
+options:
+  -h, --help            show this help message and exit
+  -t, --timeout TIMEOUT
+                        Timeout ping dalam detik (default: 1)
+  -m, --mode {all,up_only}
+                        Mode tampil: all (UP & DOWN) atau up_only (default: all)
+  --max-ips MAX_IPS     Maksimal IP per target (anti bom /64, default: 65536)
+  --jobs JOBS           Jumlah thread bersamaan (default: 100, bash versi 80)
+  --csv CSV_FILE        Export hasil ke CSV
+  --json JSON_FILE      Export hasil ke JSON
+  --up-only             Shortcut untuk --mode up_only
+  --no-color            Matikan warna
+  --no-banner           Sembunyikan banner ASCII
+
+Contoh penggunaan:
+  Ipscan.py 192.168.1.0/24
+  Ipscan.py fd00::/120 --csv hasil.csv --json hasil.json
+  Ipscan.py 192.168.1.1,fd00::1,10.0.0.1-10.0.0.20 -t 1 --jobs 100 --up-only
+  Ipscan.py 8.8.8.8,1.1.1.1 --csv google_dns.csv --json google_dns.json --all
+        
+root@labstack:~# 
 ```
 
 ## Support
