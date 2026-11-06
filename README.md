@@ -4,63 +4,62 @@
 <img src="img/multiple_ipscanv3.png">
 </p>
 
-#### Installing
+#### Quick Start
 ```
-git clone https://github.com/anggrdwjy/multiple-ipscan.git
-cd multiple-ipscan
 chmod +x multiple_ipscan.py
-python3 multiple_ipscan.py --help
-```
 
-#### Features
-```
-# help
-python3 mutliple_ipscan.py --help
-
-# basic
+# Single network
 python3 multiple_ipscan.py 192.168.1.0/24
 
-# multiple scanning ipv4 + ipv6 + export
-python3 multiple_ipscan.py 192.168.1.1,fd00::1,10.0.0.1-10.0.0.20,2001:db8::1-2001:db8::ff -t 1 --jobs 100 --csv hasil.csv --json hasil.json
+# Mixed IPv4 + IPv6 + export
+python3 multiple_ipscan.py 192.168.1.1,fd00::1,10.0.0.1-10.0.0.20 -t 1 --jobs 100 --csv result.csv --json result.json
 
-# sorting only "up" and export csv or json
+# Only hosts that are UP, no color, no banner (for cron / scripts)
 python3 multiple_ipscan.py fd00::/120 --up-only --no-color --no-banner --csv up.csv --json up.json
+```
 
-# timeout 2s, max 1000 IP target
+#### Usage
+```
+python3 multiple_ipscan.py <target> [options]
+Positional:
+  target                  Target IP/CIDR/Range, comma-separated for multiple.
+                          Can mix v4 & v6. Example: 192.168.1.0/24,fd00::/120
+Options:
+  -t, --timeout SEC       Ping timeout in seconds (default: 1)
+  -m, --mode MODE         Display mode: all (UP & DOWN) or up_only (default: all)
+  --max-ips N             Max IPs per target (anti /64 bomb, default: 65536)
+  --jobs N                Number of concurrent threads (default: 100, bash version is 80)
+  --csv FILE              Export results to CSV
+  --json FILE             Export results to JSON
+  --up-only               Shortcut for --mode up_only
+  --no-color              Disable colors
+  --no-banner             Hide ASCII banner
+  -h, --help              Show help
+```
+
+#### Examples
+```
+# CIDR IPv4
+python3 multiple_ipscan.py 192.168.1.0/24
+
+# CIDR IPv6
+python3 multiple_ipscan.py fd00::/120 --csv result.csv --json result.json
+
+# Range
+python3 multiple_ipscan.py 192.168.1.10-192.168.1.50
+python3 multiple_ipscan.py 2001:db8::1-2001:db8::ff
+
+# Multiple mixed targets
+python3 multiple_ipscan.py 192.168.1.1,fd00::1,10.0.0.1-10.0.0.20,2001:db8::1-2001:db8::ff -t 1 --jobs 100
+
+# Public DNS check
+python3 multiple_ipscan.py 8.8.8.8,1.1.1.1,2001:4860:4860::8888 --csv google_dns.csv --json google_dns.json
+
+# Link-local (interface is required)
+python3 multiple_ipscan.py fe80::1%eth0
+
+# Limit large prefix
 python3 multiple_ipscan.py 10.0.0.0/16 --max-ips 1000 --jobs 200
-```
-
-#### Helping Tools
-```
-root@labstack:~# python3 multiple_ipscan.py --help
-usage: Ipscan.py [-h] [-t TIMEOUT] [-m {all,up_only}] [--max-ips MAX_IPS] [--jobs JOBS] [--csv CSV_FILE] [--json JSON_FILE] [--up-only] [--no-color] [--no-banner] target
-
-Advanced Hybrid IPv4/IPv6 Scanner - Python Version
-
-positional arguments:
-  target                Target IP/CIDR/Range, pisah koma untuk multiple. Bisa campur v4 & v6. Contoh: 192.168.1.0/24,fd00::/120
-
-options:
-  -h, --help            show this help message and exit
-  -t, --timeout TIMEOUT
-                        Timeout ping dalam detik (default: 1)
-  -m, --mode {all,up_only}
-                        Mode tampil: all (UP & DOWN) atau up_only (default: all)
-  --max-ips MAX_IPS     Maksimal IP per target (anti bom /64, default: 65536)
-  --jobs JOBS           Jumlah thread bersamaan (default: 100, bash versi 80)
-  --csv CSV_FILE        Export hasil ke CSV
-  --json JSON_FILE      Export hasil ke JSON
-  --up-only             Shortcut untuk --mode up_only
-  --no-color            Matikan warna
-  --no-banner           Sembunyikan banner ASCII
-
-Contoh penggunaan:
-  multiple_ipscan.py 192.168.1.0/24
-  multiple_ipscan.py fd00::/120 --csv hasil.csv --json hasil.json
-  multiple_ipscan.py 192.168.1.1,fd00::1,10.0.0.1-10.0.0.20 -t 1 --jobs 100 --up-only
-  multiple_ipscan.py 8.8.8.8,1.1.1.1 --csv google_dns.csv --json google_dns.json --all
-        
-root@labstack:~# 
 ```
 
 ## Support
