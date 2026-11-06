@@ -1,7 +1,7 @@
 ## Information
 
 <p align="left">
-<img src="img/multiple_ipscanv3.png">
+<img src="img/multiple-ipscan-v4.png">
 </p>
 
 #### Quick Start
