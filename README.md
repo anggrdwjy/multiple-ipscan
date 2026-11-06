@@ -8,28 +8,28 @@ This tools for multiple IPv4 scanning
 
 #### Installing Tools
 ```
-root@server1:~# git clone https://github.com/anggrdwjy/multiple-ipscan.git
-root@server1:~# cd multiple-ipscan
-root@server1:~multiple-ipscan# chmod +x multiple_ipscan.py
-root@server1:~multiple-ipscan# python3 multiple_ipscan.py --help
+git clone https://github.com/anggrdwjy/multiple-ipscan.git
+cd multiple-ipscan
+chmod +x multiple_ipscan.py
+python3 multiple_ipscan.py --help
 ```
 
 #### Fiture Tools
 ```
 # help
-python3 ipscan.py --help
+python3 mutliple_ipscan.py --help
 
 # basic
-python3 ipscan.py 192.168.1.0/24
+python3 multiple_ipscan.py 192.168.1.0/24
 
-# campur v4 + v6 + export
-python3 ipscan.py 192.168.1.1,fd00::1,10.0.0.1-10.0.0.20,2001:db8::1-2001:db8::ff -t 1 --jobs 100 --csv hasil.csv --json hasil.json
+# multiple scanning ipv4 + ipv6 + export
+python3 multiple_ipscan.py 192.168.1.1,fd00::1,10.0.0.1-10.0.0.20,2001:db8::1-2001:db8::ff -t 1 --jobs 100 --csv hasil.csv --json hasil.json
 
-# cuma yang UP aja, tanpa warna, tanpa banner (buat di cron)
-python3 ipscan.py fd00::/120 --up-only --no-color --no-banner --csv up.csv --json up.json
+# sorting only "up" and export csv or json
+python3 multiple_ipscan.py fd00::/120 --up-only --no-color --no-banner --csv up.csv --json up.json
 
-# timeout 2 detik, max 1000 IP per target (biar aman)
-python3 ipscan.py 10.0.0.0/16 --max-ips 1000 --jobs 200
+# timeout 2s, max 1000 IP target
+python3 multiple_ipscan.py 10.0.0.0/16 --max-ips 1000 --jobs 200
 ```
 
 ## Support
