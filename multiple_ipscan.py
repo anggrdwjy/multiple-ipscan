@@ -1,18 +1,5 @@
 #!/usr/bin/env python3
 # ==============================================================================
-# ipscan.py - Advanced Hybrid IPv4/IPv6 Scanner (Python Version)
-# Fitur:
-#   - Support IPv4 & IPv6 campur (CIDR, Range, Single, Multiple)
-#   - Ping sweep dengan ThreadPool (jauh lebih cepat dari bash)
-#   - Reverse DNS + MAC (ip neighbor)
-#   - Export CSV & JSON
-#   - Pretty table dengan warna
-#
-# Contoh:
-#   python3 ipscan.py 192.168.1.0/24
-#   python3 ipscan.py fd00::/120 --csv hasil.csv --json hasil.json
-#   python3 ipscan.py 192.168.1.1,fd00::1,10.0.0.1-10.0.0.20 -t 1 --jobs 100 --up-only
-# ==============================================================================
 # Based on ipscan_v3.sh by aw0x0410 - https://github.com/anggrdwjy
 # ==============================================================================
 
@@ -54,8 +41,9 @@ BANNER = f"""
   ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝               
                                                                                 
   Advanced Multiple Hybrid IPv4/IPv6 Scanning
-  Prepared by aw0x0410
+  Programmer by anggrdwjy
   Source : https://github.com/anggrdwjy/multiple-ipscan
+  
 """
 
 def detect_ping_cmd():
@@ -404,9 +392,9 @@ Contoh penggunaan:
         print(f"{YELLOW if use_color else ''}[WARN] {w}{NC if use_color else ''}")
 
     print(f"{BOLD if use_color else ''}{'='*104}{NC if use_color else ''}")
-    print(f"{BOLD if use_color else ''} Target Pemindaian : {YELLOW if use_color else ''}{args.target}{NC if use_color else ''}")
-    print(f"{BOLD if use_color else ''} Total IP Unik     : {total_hosts} IP (v4: {total_v4}, v6: {total_v6}) limit {args.max_ips}/target{NC if use_color else ''}")
-    print(f"{BOLD if use_color else ''} Timeout / Jobs    : {args.timeout}s / {args.jobs} threads{NC if use_color else ''}")
+    print(f"{BOLD if use_color else ''} Target Scanning : {YELLOW if use_color else ''}{args.target}{NC if use_color else ''}")
+    print(f"{BOLD if use_color else ''} Total IP     	: {total_hosts} IP (v4: {total_v4}, v6: {total_v6}) limit {args.max_ips}/target{NC if use_color else ''}")
+    print(f"{BOLD if use_color else ''} Timeout / Jobs  : {args.timeout}s / {args.jobs} threads{NC if use_color else ''}")
     print(f"{BOLD if use_color else ''}{'='*104}{NC if use_color else ''}")
 
     # Scanning
