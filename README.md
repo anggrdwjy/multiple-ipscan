@@ -32,7 +32,7 @@ python3 multiple_ipscan.py 10.0.0.0/16 --max-ips 1000 --jobs 200
 
 #### Helping Tools
 ```
-root@labstack:~# python3 Ipscan.py --help
+root@labstack:~# python3 multiple_ipscan.py --help
 usage: Ipscan.py [-h] [-t TIMEOUT] [-m {all,up_only}] [--max-ips MAX_IPS] [--jobs JOBS] [--csv CSV_FILE] [--json JSON_FILE] [--up-only] [--no-color] [--no-banner] target
 
 Advanced Hybrid IPv4/IPv6 Scanner - Python Version
@@ -55,10 +55,10 @@ options:
   --no-banner           Sembunyikan banner ASCII
 
 Contoh penggunaan:
-  Ipscan.py 192.168.1.0/24
-  Ipscan.py fd00::/120 --csv hasil.csv --json hasil.json
-  Ipscan.py 192.168.1.1,fd00::1,10.0.0.1-10.0.0.20 -t 1 --jobs 100 --up-only
-  Ipscan.py 8.8.8.8,1.1.1.1 --csv google_dns.csv --json google_dns.json --all
+  multiple_ipscan.py 192.168.1.0/24
+  multiple_ipscan.py fd00::/120 --csv hasil.csv --json hasil.json
+  multiple_ipscan.py 192.168.1.1,fd00::1,10.0.0.1-10.0.0.20 -t 1 --jobs 100 --up-only
+  multiple_ipscan.py 8.8.8.8,1.1.1.1 --csv google_dns.csv --json google_dns.json --all
         
 root@labstack:~# 
 ```
