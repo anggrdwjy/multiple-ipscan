@@ -43,7 +43,6 @@ BANNER = f"""
 Advanced Multiple Hybrid IPv4/IPv6 Scanning
 Programmer by anggrdwjy
 Source : https://github.com/anggrdwjy/multiple-ipscan
-  
 """
 
 def detect_ping_cmd():
@@ -392,9 +391,9 @@ Contoh penggunaan:
         print(f"{YELLOW if use_color else ''}[WARN] {w}{NC if use_color else ''}")
 
     print(f"{BOLD if use_color else ''}{'='*104}{NC if use_color else ''}")
-    print(f"{BOLD if use_color else ''} Target Scanning : {YELLOW if use_color else ''}{args.target}{NC if use_color else ''}")
-    print(f"{BOLD if use_color else ''} Total IP     	: {total_hosts} IP (v4: {total_v4}, v6: {total_v6}) limit {args.max_ips}/target{NC if use_color else ''}")
-    print(f"{BOLD if use_color else ''} Timeout / Jobs  : {args.timeout}s / {args.jobs} threads{NC if use_color else ''}")
+    print(f"{BOLD if use_color else ''}Target Scanning : {YELLOW if use_color else ''}{args.target}{NC if use_color else ''}")
+    print(f"{BOLD if use_color else ''}Total IP     	: {total_hosts} IP (v4: {total_v4}, v6: {total_v6}) limit {args.max_ips}/target{NC if use_color else ''}")
+    print(f"{BOLD if use_color else ''}Timeout / Jobs  : {args.timeout}s / {args.jobs} threads{NC if use_color else ''}")
     print(f"{BOLD if use_color else ''}{'='*104}{NC if use_color else ''}")
 
     # Scanning
