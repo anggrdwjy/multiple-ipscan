@@ -67,7 +67,7 @@ python3 multiple_ipscan.py 10.0.0.0/16 --max-ips 1000 --jobs 200
 * [:octocat: Follow me on GitHub](https://github.com/anggrdwjy)
 * [🔔 Subscribe me on Youtube](https://www.youtube.com/@anggarda.wijaya)
 
-## Lisensi
+## License
 
 This project is licensed under the **MIT License**—it is free to use, modify, and distribute, including for commercial purposes, as long as you include the copyright notice and this license.
 
