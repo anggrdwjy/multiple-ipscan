@@ -1,7 +1,7 @@
 ## Information
 
 <p align="left">
-<img src="img/multiple-ipscan-v4.png">
+<img src="multiple-ipscan-v4.png">
 </p>
 
 #### Quick Start
@@ -62,7 +62,13 @@ python3 multiple_ipscan.py fe80::1%eth0
 python3 multiple_ipscan.py 10.0.0.0/16 --max-ips 1000 --jobs 200
 ```
 
-## Support
+#### Support
 
 * [:octocat: Follow me on GitHub](https://github.com/anggrdwjy)
 * [🔔 Subscribe me on Youtube](https://www.youtube.com/@anggarda.wijaya)
+
+## Lisensi
+
+This project is licensed under the **MIT License**—it is free to use, modify, and distribute, including for commercial purposes, as long as you include the copyright notice and this license.
+
+See the full file at [`LICENSE`](LICENSE).
