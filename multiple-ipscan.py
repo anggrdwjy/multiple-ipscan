@@ -44,14 +44,6 @@ Author by anggrdwjy
 Source : https://github.com/anggrdwjy/multiple-ipscan
 """
 
-def print_banner():
-    """Print startup banner. Colors only when output is a terminal."""
-    if sys.stdout.isatty():
-        # Cyan banner, reset at the end
-        print("\033[96m" + BANNER + "\033[0m")
-    else:
-        print(BANNER)
-
 def detect_ping_cmd():
     """Detect available ping commands for v4 and v6"""
     has_ping6 = False
@@ -376,7 +368,11 @@ Usage examples:
         args.mode = "up_only"
 
     use_color = not args.no_color
-
+    
+	# Banner
+    if not args.no_banner:
+        print(BANNER)
+		
     # Parse targets
     try:
         all_ips, total_v4, total_v6, warnings = parse_targets(args.target, args.max_ips)
