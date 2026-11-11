@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-# ==============================================================================
-# Based on ipscan_v3.sh by aw0x0410 - https://github.com/anggrdwjy
-# ==============================================================================
-
 import argparse
 import ipaddress
 import subprocess
@@ -40,8 +36,11 @@ BANNER = f"""
 ███████║╚██████╗██║  ██║██║ ╚████║██║ ╚████║██║██║ ╚████║╚██████╔╝              
 ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝               
                                                                                 
-Advanced Multiple Hybrid IPv4/IPv6 Scanning
-Programmer by anggrdwjy
+** The author is not responsible for any consequences resulting from this script, 
+as it was created solely for testing purposes in a lab or on a local network.
+beyond the scope of applicable international law. **
+
+Author by anggrdwjy
 Source : https://github.com/anggrdwjy/multiple-ipscan
 """
 
